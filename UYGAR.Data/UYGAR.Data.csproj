@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3FF2D3E5-F7CA-47BF-8C82-A515C30E4009}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UYGAR.Data</RootNamespace>
+    <AssemblyName>UYGAR.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.2938.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ExrernelDll\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.MySql, Version=9.0.0.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ExrernelDll\Devart.Data.MySql.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql, Version=8.0.0.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ExrernelDll\Devart.Data.PostgreSql.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net46\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.5.2.0\lib\net451\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\AssociationAttribute.cs" />
+    <Compile Include="Attributes\ColumnAttribute.cs" />
+    <Compile Include="Attributes\Db_ActionAttribute.cs" />
+    <Compile Include="Attributes\DisplayEnumNameAttribute.cs" />
+    <Compile Include="Attributes\DisplayNameAttribute.cs" />
+    <Compile Include="Attributes\DisplayReationNameAttribute.cs" />
+    <Compile Include="Attributes\IndexedAttribute.cs" />
+    <Compile Include="Attributes\RequiredAttribute.cs" />
+    <Compile Include="Attributes\SizeAttribute.cs" />
+    <Compile Include="Attributes\TableAttribute.cs" />
+    <Compile Include="Attributes\ValidEmailAttribute.cs" />
+    <Compile Include="Base\DbConnectionBase.cs" />
+    <Compile Include="Base\DBDataReaderValues.cs" />
+    <Compile Include="Base\Model.cs" />
+    <Compile Include="Base\ModelCollection.cs" />
+    <Compile Include="Base\ModelRaporBase.cs" />
+    <Compile Include="Base\Order.cs" />
+    <Compile Include="Base\QueryParameters.cs" />
+    <Compile Include="Configuration\ApplicationConfig.cs" />
+    <Compile Include="Configuration\Events.cs" />
+    <Compile Include="Configuration\Ini.cs" />
+    <Compile Include="Configuration\IProfile.cs" />
+    <Compile Include="Configuration\Profile.cs" />
+    <Compile Include="Configuration\Xml.cs" />
+    <Compile Include="Configuration\XmlHelper.cs" />
+    <Compile Include="Connections\DbConnectionDb2.cs" />
+    <Compile Include="Connections\DbConnectionERP.cs" />
+    <Compile Include="Connections\DbConnectionMySql.cs" />
+    <Compile Include="Connections\DbConnectionPostgreSql.cs" />
+    <Compile Include="Connections\DbConnectionSql.cs" />
+    <Compile Include="Connections\Db_Action.cs" />
+    <Compile Include="Connections\DeclarationOrderComparator.cs" />
+    <Compile Include="Criterias\CompareCriteria.cs" />
+    <Compile Include="Criterias\CompareOperator.cs" />
+    <Compile Include="Criterias\Criteria.cs" />
+    <Compile Include="Criterias\CriteriaGroup.cs" />
+    <Compile Include="Criterias\InCriteria.cs" />
+    <Compile Include="Criterias\InDetailCriteria.cs" />
+    <Compile Include="Criterias\InnerCriteria.cs" />
+    <Compile Include="Criterias\IsNullCriteria.cs" />
+    <Compile Include="Criterias\NotCriteria.cs" />
+    <Compile Include="Criterias\QueryCriteria.cs" />
+    <Compile Include="Exceptions\DBKayitBulunamadiException.cs" />
+    <Compile Include="Exceptions\DBKayitDegistirilmisException.cs" />
+    <Compile Include="Exceptions\DBMukerrerKayitException.cs" />
+    <Compile Include="Exceptions\DBSilinemezException.cs" />
+    <Compile Include="Exceptions\EksikHataliParametreException.cs" />
+    <Compile Include="Exceptions\ExceptionHelper.cs" />
+    <Compile Include="Exceptions\GenelSistemHatasiException.cs" />
+    <Compile Include="Exceptions\KYSException.cs" />
+    <Compile Include="Exceptions\KYSExceptionId.cs" />
+    <Compile Include="Exceptions\SessionExpiredException.cs" />
+    <Compile Include="Exceptions\UygulamaHatasiException.cs" />
+    <Compile Include="Log\LogDetail.cs" />
+    <Compile Include="Log\LogExeption.cs" />
+    <Compile Include="Log\LogMaster.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaxPayerDescendant.cs" />
+    <Compile Include="TaxPayerWeb.cs" />
+    <Compile Include="UserSesionInfo.cs" />
+    <Compile Include="Utilyti\Cryptographer.cs" />
+    <Compile Include="Utilyti\EntityMapper.cs" />
+    <Compile Include="Utilyti\Log.cs" />
+    <Compile Include="Utilyti\LogType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UYGAR.Log.Client\UYGAR.Log.Client.csproj">
+      <Project>{74bbe457-42f1-42c5-b8c3-93421e80319d}</Project>
+      <Name>UYGAR.Log.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UYGAR.Log.Shared\UYGAR.Log.Shared.csproj">
+      <Project>{cbe92d9b-3725-4fc2-a380-220f5ce0b301}</Project>
+      <Name>UYGAR.Log.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
